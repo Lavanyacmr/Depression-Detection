@@ -1,0 +1,122 @@
+random_seed: 42
+data_file: "data/dataset.xlsx"
+output_dir: "results"
+
+splits:
+  test_size: 0.15
+  val_size: 0.15
+  random_seed: 42
+
+kfold:
+  n_splits: 5
+  shuffle: true
+  random_seed: 42
+
+models:
+  tdd_net:
+    max_seq_length: 128
+    batch_size: 32
+    epochs: 5
+    learning_rate: 2e-5
+    weight_decay: 0.01
+    dropout: 0.3
+    metadata_embed_dim: 128
+    text_embed_dim: 768
+    common_dim: 448
+    fused_dim: 896
+    num_heads: 8
+    warmup_ratio: 0.1
+    grad_clip: 1.0
+    early_stopping_patience: 2
+    use_amp: false
+
+  roberta:
+    batch_size: 32
+    epochs: 5
+    learning_rate: 2e-5
+    weight_decay: 0.01
+    dropout: 0.3
+
+  distilbert:
+    batch_size: 32
+    epochs: 5
+    learning_rate: 2e-5
+    weight_decay: 0.01
+
+  squeezebert:
+    batch_size: 32
+    epochs: 5
+    learning_rate: 2e-5
+    weight_decay: 0.01
+
+  cnn_bilstm:
+    embedding_dim: 300
+    cnn_filters: 128
+    kernel_size: 5
+    hidden_units: 128
+    dropout: 0.5
+    batch_size: 32
+    epochs: 5
+    learning_rate: 1e-3
+
+  agf_smd_ga:
+    population_size: 30
+    max_iterations: 100
+    mutation_prob: 0.10
+    crossover_prob: 0.80
+    tfidf_features: 20000
+    ngram_range: [1,2]
+
+  asym:
+    hidden_dim: 256
+    attention_heads: 8
+    ff_dim: 512
+    dropout: 0.3
+    batch_size: 32
+    epochs: 5
+    learning_rate: 1e-4
+
+  tmfe:
+    hidden_dim: 256
+    attention_heads: 8
+    ff_dim: 512
+    num_layers: 4
+    dropout: 0.2
+    batch_size: 32
+    epochs: 5
+    learning_rate: 1e-4
+
+  speecht_rag:
+    hidden_dim: 512
+    attention_heads: 8
+    ff_dim: 512
+    num_layers: 6
+    top_k: 5
+    batch_size: 16
+    epochs: 5
+    learning_rate: 2e-5
+
+  rf_dsm:
+    n_estimators: 300
+    max_depth: 20
+    min_samples_split: 4
+    min_samples_leaf: 2
+    criterion: "gini"
+
+  nlp_smsd:
+    tfidf_features: 20000
+    ngram_range: [1,2]
+    C: 1.0
+    max_iter: 1000
+
+  asknn:
+    n_neighbors: 5
+    distance_metric: "euclidean"
+    weight_function: "distance"
+    leaf_size: 30
+
+  eec:
+    n_estimators: 200
+    learning_rate: 0.1
+    max_depth: 5
+    subsample: 0.8
