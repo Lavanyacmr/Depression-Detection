@@ -1,23 +1,7 @@
 TDD-Net: Transformer-Based Depression Detection Network
 Overview
 TDD-Net is a transformer-based multimodal deep learning framework for depression risk detection using textual and metadata features. The proposed architecture integrates contextual language representations with participant metadata to improve binary classification performance for depression-risk screening. This repository contains the complete implementation of TDD-Net, including data pre-processing, model training, evaluation, and utility scripts.
-Repository Structure
-•	main.py  Main execution script
-•	train.py – Model training
-•	evaluate.py – Model evaluation
-•	model.py – TDD-Net architecture
-•	preprocessing.py – Data pre-processing pipeline
-•	utils.py – Utility functions
-•	config.py – Model configuration
-•	requirements.txt – Python dependencies
-Features
-•	Transformer-based text encoder
-•	Metadata feature fusion
-•	Binary depression-risk classification
-•	End-to-end pre-processing pipeline
-•	Training and evaluation framework
-•	Configurable hyper parameters
-•	Modular implementation
+
 Requirements
 •	Python 3.10 or later
 •	PyTorch
